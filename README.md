@@ -92,11 +92,10 @@ representation of the letter regardless if I pass it a lower case 'a' or an uppe
 
 *Hint: Use the .lower() method on a string to convert your argument to lower case.*
 
-The function should return None for characters other than letters, i.e. numbers and 
-punctuation marks:
+The function should return an empty string for characters other than letters, i.e. numbers or punctuation marks:
 
     mark = morse_code('1')
-    mark == None
+    mark == ''
 
 You can use the following website for the morse code representation of each letter:
 
