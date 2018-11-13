@@ -61,6 +61,9 @@ def transmit(message):
     dot_tone = tone(time_unit)  
     dash_tone = tone(3 * time_unit)
 
+    # Split the message into words
+    words = message.split()
+
     # Loop through each word in the message
     for word in words:
 
