@@ -108,7 +108,7 @@ For the second part of the assignment, you will complete the 'transmit' function
 to play audio tones.
 
     def transmit(message):
-        time_unit = 0.06  # time unit (secs)
+        time_unit = 0.06  # (secs)
         dot_tone = tone(time_unit)
         dash_tone = tone(3 * time_unit)
 
