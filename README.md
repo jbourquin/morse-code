@@ -44,3 +44,21 @@ sudo apt-get install -y python3-dev libasound2-dev
 
 ## Python Depedencies
 
+Install the following python modules into your virtual environment using PIP:
+
+```
+pip install numpy simpleaudio
+```
+
+Test that the install of simpleaudio was successful, open a python intrepreter by typing `python` in your virtual environment console. In the python intrepreter, type the following commands:
+
+```
+import simpleaudio.functionchecks as fc
+fc.LeftRightCheck.run()
+```
+
+You should here a piano note from each of your computer speakers.
+
+## Source Code
+
+Open morse-code.py in your editor and follow the instructions in the comment section to complete the assignment.
