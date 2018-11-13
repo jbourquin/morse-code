@@ -1,6 +1,8 @@
+import sys
 import time
 import numpy as np 
 import simpleaudio as sa 
+
 
 # This function generates the audio tone by creating a 650hz SIN wave
 def tone(duration, frequency=650, sampling_rate=44100):
@@ -78,11 +80,15 @@ def transmit(message):
                 
                 # Dots are one time unit long
                 if mark == '.':
+                    sys.stdout.write('.')
+                    sys.stdout.flush()
                     playback = dot_tone.play()
                     playback.wait_done()
                 
                 # Dashes are 3 time units long
                 elif mark == '-':
+                    sys.stdout.write('-')
+                    sys.stdout.flush()
                     playback = dash_tone.play()
                     playback.wait_done()
 
@@ -93,7 +99,13 @@ def transmit(message):
             time.sleep(3 * time_unit)
 
         # Gap between words
+        sys.stdout.write(' ')
+        sys.stdout.flush()
         time.sleep(7 * time_unit)
+
+    # Add a new line to the end of the stdout
+    sys.stdout.write('\n')
+    sys.stdout.flush()
 
 
 # <-- Do Not Modify or Move -->
