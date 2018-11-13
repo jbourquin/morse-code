@@ -17,6 +17,40 @@ def tone(duration, frequency=650, sampling_rate=44100):
 # <-- Write Your Morse Code Function Here -->
 
 
+MORSE_CODE_MARKS = {
+    'a': '.-',
+    'b': '-...',
+    'c': '-.-.',
+    'd': '-..',
+    'e': '.',
+    'f': '..-.',
+    'g': '--.',
+    'h': '....',
+    'i': '..',
+    'j': '.---',
+    'k': '-.-',
+    'l': '.-..',
+    'm': '--',
+    'n': '-.',
+    'o': '---',
+    'p': '.--.',
+    'q': '--.-',
+    'r': '.-.',
+    's': '...',
+    't': '-',
+    'u': '..-',
+    'v': '...-',
+    'w': '.--',
+    'x': '-..-',
+    'y': '-.--',
+    'z': '--..'
+}
+
+
+def morse_code(char):
+    return MORSE_CODE_MARKS.get(char.lower(), '')
+
+
 # <-- Complete The Transmit Function -->
 def transmit(message):
 
@@ -27,7 +61,36 @@ def transmit(message):
     dot_tone = tone(time_unit)  
     dash_tone = tone(3 * time_unit)
 
-    # <-- Your Code Goes Here -->
+    # Loop through each word in the message
+    for word in words:
+
+        # Loop through each letter in the word
+        for letter in word:
+
+            # Convert the letter to morse code marks (dots and dashes)
+            marks = morse_code(letter)
+            
+            # Loop through each mark and play a tone
+            for mark in marks:
+                
+                # Dots are one time unit long
+                if mark == '.':
+                    playback = dot_tone.play()
+                    playback.wait_done()
+                
+                # Dashes are 3 time units long
+                elif mark == '-':
+                    playback = dash_tone.play()
+                    playback.wait_done()
+
+                # Inter-element gap
+                time.sleep(time_unit)
+
+            # Gap between letters
+            time.sleep(3 * time_unit)
+
+        # Gap between words
+        time.sleep(7 * time_unit)
 
 
 # <-- Do Not Modify or Move -->
