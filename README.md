@@ -14,7 +14,6 @@ Change to the morse-code project directory and create a new virtual environment:
     cd morse-code
     mkvirtualenv -a . morse-code
 
-
 Setup the build environment for your target operating system:
 
 ### Mac
