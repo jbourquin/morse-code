@@ -6,17 +6,14 @@ In this project we will build a morse code audio generator using Python.
 
 In your developer directory, clone this repository using git:
 
-```
-cd ~/Developer
-git clone git@github.com:bourqujl/morse-code.git
-```
+    cd ~/Developer
+    git clone https://github.com/bourqujl/morse-code.git
 
 Change to the morse-code project directory and create a new virtual environment:
 
-```
-cd morse-code
-mkvirtualenv -a . morse-code
-```
+    cd morse-code
+    mkvirtualenv -a . morse-code
+
 
 Setup the build environment for your target operating system:
 
@@ -24,23 +21,19 @@ Setup the build environment for your target operating system:
 
 Install the xcode command line tools if you don't already have them installed:
 
-```
-xcode-select --install
-```
+    xcode-select --install
 
 ### Ubuntu
 
 Install the following developer libraries using apt-get:
 
-```
-sudo apt-get install -y python3-dev libasound2-dev
-```
+    sudo apt-get install -y python3-dev libasound2-dev
 
 ### CentOS
 
-```
+Install the following developer libraries using yum:
 
-```
+    sudo yum install alsa-lib-devel
 
 ## Python Depedencies
 
